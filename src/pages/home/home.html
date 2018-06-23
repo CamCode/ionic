@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+    <button persistent="true" ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Formulario</h2>
+  <ion-item>
+    <ion-avatar item-start="">
+      <img src="https://picsum.photos/200/300">
+      <!--<img [src]="usuario.foto">
+      usuario.ts (crear el objeto con las variables nombre, telefono .. etc
+      perfil.ts llamar usuario Model, )
+      -->
+    </ion-avatar>
+  </ion-item>
+
+  <form (submit)="mostrar()">
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <!--[valor]= "variable que definimos en el componente" (del componente hacia el html-->
+      <!--(evento)="" (del html hacia el componente)-->
+      <!--<ion-input type="text" name="title" [value]="nombre" (ng-keypress)="teclaPress($event)"></ion-input>-->
+      <ion-input type="text" name="nombre" placeholder="Escriba su nombre" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="text" name="email" placeholder="Ej : nombre@correo.com" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Dirección</ion-label>
+      <ion-input type="text" name="direccion" placeholder="calle falsa 123" [(ngModel)]="direccion"></ion-input>
+    </ion-item>
+
+    <button ion-button full type="submit" >Enviar</button>
+  </form>
+  <!--visualizar el cambio en el html-->
+
+  <p>{{nombre}}</p>
+  <p>{{email}}</p>
+  <p>{{direccion}}</p>
+</ion-content>
